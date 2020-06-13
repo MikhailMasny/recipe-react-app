@@ -104,5 +104,4 @@ dist
 .tern-port
 
 # User files
-api-keys.js
 build/
