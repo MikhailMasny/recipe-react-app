@@ -1,4 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
+import * as api from '../../api-keys';
 import Recipe from '../Recipe/Recipe';
 import './../App/App.css'
 
@@ -13,7 +15,7 @@ function App() {
   }, [query]);
 
   const getRecipes = async () => {
-    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}`);
+    const response = await fetch(`https://api.edamam.com/search?q=${query}&app_id=${api.APP_ID}&app_key=${api.APP_KEY}`);
     const data = await response.json();
     console.log(data.hits);
     setRecipes(data.hits);
