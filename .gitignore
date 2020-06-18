@@ -105,3 +105,6 @@ dist
 
 # User files
 build/
+
+#API keys
+.env
