@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__top-indent {
+  margin-top: 16px;
+}
+
+.header__title {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 50px;
+  color: #000000;
+}
+
+@media screen and (max-width: 736px) {
+  .header__title {
+    font-size: 36px;
+    line-height: 40px;
+  }
+}

@@ -1,5 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
+import Header from "../Header/Header";
 import Recipe from "../Recipe/Recipe";
 import "./../App/App.css";
 
@@ -14,9 +15,10 @@ function App() {
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_API_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=6018288c&app_key=e917104737f8ae249c6d3d186093c008`
     );
     const data = await response.json();
+    console.log(data);
     console.log(data.hits);
     setRecipes(data.hits);
   };
@@ -34,26 +36,27 @@ function App() {
 
   return (
     <div className="wrapper">
-      <div className="header header__top-indent">
-        <h1 className="header__title">Recipes search engine</h1>
+      <Header />
+      <div className="search search__margin-indent">
+        <form className="search__form" onSubmit={getSearch}>
+          <div className="search__title search__title-indent">
+            Search for recipes
+          </div>
+          <input
+            className="search__input"
+            type="search"
+            value={search}
+            onChange={updateSearch}
+            placeholder="What will we look for?"
+          />
+        </form>
       </div>
-      <form onSubmit={getSearch} className="search search__margin-indent">
-        <input
-          className="search__input search__input-indent"
-          type="search"
-          value={search}
-          onChange={updateSearch}
-          placeholder="What will we look for?"
-        />
-        <button className="search__button" type="submit">
-          Search
-        </button>
-      </form>
-      <div className="app">
+      <div className="cards">
         {recipes.map((recipe) => (
           <Recipe
             key={recipe.recipe.url}
-            title={recipe.recipe.label}
+            title={recipe.recipe.label} // TODO: fix name
+            ingredients={recipe.recipe.ingredientLines}
             colories={recipe.recipe.calories}
             image={recipe.recipe.image}
             link={recipe.recipe.url}
