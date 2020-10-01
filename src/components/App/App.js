@@ -57,7 +57,7 @@ function App() {
             key={recipe.recipe.url}
             title={recipe.recipe.label} // TODO: fix name
             ingredients={recipe.recipe.ingredientLines}
-            colories={recipe.recipe.calories}
+            calories={recipe.recipe.calories}
             image={recipe.recipe.image}
             link={recipe.recipe.url}
           />

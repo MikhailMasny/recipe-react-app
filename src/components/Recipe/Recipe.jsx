@@ -1,8 +1,12 @@
 import React from "react";
 import "./recipe.css";
 import calorie from "../../assets/images/calorie.png";
+import { shortenIt, roundIt } from "../../services/common";
 
 function Recipe(props) {
+  const shortenTitle = shortenIt(props.title);
+  const roundCalories = roundIt(props.calories);
+
   return (
     <div className="recipe recipe__bottom-indent">
       <div className="recipe__image">
@@ -15,12 +19,13 @@ function Recipe(props) {
             href={props.link}
             target="_blank"
             rel="noopener noreferrer"
+            title={props.title}
           >
-            {props.title}
+            {shortenTitle}
           </a>
         </div>
         <div className="recipe__text recipe__text-indent">
-          some text here
+          {props.ingredients.join(", ")}
         </div>
         <div className="recipe__actions">
           <div className="calories">
@@ -28,7 +33,7 @@ function Recipe(props) {
               <img src={calorie} alt="" />
             </div>
             <div className="calories__count">
-              {Math.round(props.colories)} calories
+              {roundCalories} calories
             </div>
           </div>
         </div>

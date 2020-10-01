@@ -110,21 +110,21 @@
     width: 150px;
   }
   .recipe__link {
-    font-size: 18px;
+    font-size: 14px;
   }
   .recipe__text {
     height: 90px;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 16px;
   }
   .recipe__text-indent {
     margin-bottom: 15px;
   }
   .calories {
-    width: 125px;
+    width: 115px;
   }
   .calories__count {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 16px;
   }
 }
