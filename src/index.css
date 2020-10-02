@@ -10,22 +10,3 @@
 body {
   background: #f1e8e6;
 }
-
-.wrapper {
-  width: 1020px;
-  margin: 0 auto;
-}
-
-@media screen and (max-width: 1020px) {
-  .wrapper {
-    width: 680px;
-    margin: 0 auto;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .wrapper {
-    width: 332px;
-    margin: 0 auto;
-  }
-}

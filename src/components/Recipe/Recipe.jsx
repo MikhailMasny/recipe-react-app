@@ -32,9 +32,7 @@ function Recipe(props) {
             <div className="calories__icon">
               <img src={calorie} alt="" />
             </div>
-            <div className="calories__count">
-              {roundCalories} calories
-            </div>
+            <div className="calories__count">{roundCalories} calories</div>
           </div>
         </div>
       </div>
