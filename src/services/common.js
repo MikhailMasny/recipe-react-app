@@ -1,7 +1,7 @@
 function shortenIt(str) {
   let recipeName = str;
-  if (recipeName.length > 18) {
-    recipeName = recipeName.substring(0, 18);
+  if (recipeName.length > 15) {
+    recipeName = recipeName.substring(0, 15);
     recipeName += "...";
   }
   return recipeName;
