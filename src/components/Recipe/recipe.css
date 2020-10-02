@@ -74,13 +74,6 @@
 }
 
 .calories {
-  width: 145px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.calories__count {
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
@@ -121,9 +114,6 @@
     margin-bottom: 15px;
   }
   .calories {
-    width: 115px;
-  }
-  .calories__count {
     font-size: 12px;
     line-height: 16px;
   }

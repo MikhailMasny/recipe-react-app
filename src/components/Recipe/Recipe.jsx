@@ -1,6 +1,5 @@
 import React from "react";
 import "./recipe.css";
-import calorie from "../../assets/images/calorie.png";
 import { shortenIt, roundIt } from "../../services/common";
 
 function Recipe(props) {
@@ -29,10 +28,10 @@ function Recipe(props) {
         </div>
         <div className="recipe__actions">
           <div className="calories">
-            <div className="calories__icon">
-              <img src={calorie} alt="" />
-            </div>
-            <div className="calories__count">{roundCalories} calories</div>
+            <span role="img" aria-label="salad">
+              🔥
+            </span>{" "}
+            {roundCalories} calories
           </div>
         </div>
       </div>
